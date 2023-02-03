@@ -7,11 +7,17 @@ use python "input->" function, enter a line of a few letters, such as "abcd"
 """
 import socket
 
+HOST = "172.20.10.10"
+PORT = 10000
+
 def main():
-    # TODO: Create a socket and connect it to the server at the designated IP and port
-    # TODO: Get user input and send it to the server using your TCP socket
-    # TODO: Receive a response from the server and close the TCP connection
-    pass
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((HOST, PORT))
+        message = input("Please a message you want to send:").encode('utf-8')
+        s.sendall(message)
+        data = s.recv(1024)
+
+    print("I got your message")
 
 
 if __name__ == '__main__':
