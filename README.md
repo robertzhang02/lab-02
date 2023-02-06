@@ -9,9 +9,13 @@
 
 Answer for Question 1: 
 
-...
-
-
+Question 1: How did the reliability of UDP change when you added 50% loss to your local
+environment? Why did this occur?
+When I added the 50% loss to my local environment, the UDP server lost some message on the server. This is occurred because UDP is unreliable. This means UDP will drop 50% of data when we added 50% loss to our local environment.
+Question 2: How did the reliability of TCP change? Why did this occur?
+When I added the 50% loss to local environment, the TCP server didn’t lose any message. This is because TCP will keep connecting until it receive the data. TCP won’t drop any data during the connection.
+Question 3: How did the speed of the TCP response change? Why might this happen?
+The speed of the TCP resonse is very slowly. This happens because TCP won’t drop any data during the connection. It will keep connecting to the server until it receive the data. This this why the TCP will response very lagging during the connection.
 
 
 
